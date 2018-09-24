@@ -1,12 +1,12 @@
 !*.dll
 
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
-/Assets/_Scenes/tmp/
+*/[Ll]ibrary/
+*/[Tt]emp/
+*/[Oo]bj/
+*/[Bb]uild/
+*/[Bb]uilds/
+*/Assets/AssetStoreTools*
+*/Assets/_Scenes/tmp/
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -37,24 +37,10 @@ sysinfo.txt
 *.unitypackage
 
 #fmod
-Assets/FMODStudioCache.asset
-Assets/StreamingAssets/*.bank
-fmod.log
-fmod_editor.log
-
-# Wwise
-/FrogKissWwise/.git/
-
-/FrogKissWwise/.vs/
-
-/FrogKissWwise/[Ll]ibrary/
-/FrogKissWwise/[Tt]emp/
-/FrogKissWwise/[Oo]bj/
-/FrogKissWwise/[Bb]uild/
-/FrogKissWwise/[Bb]uilds/
-/FrogKissWwise/Assets/AssetStoreTools*
-/FrogKissWwise/Assets/_Scenes/tmp/
-
-
-/FrogKissWwise/Originals/SFX/*.akd
-/FrogKissWwise/.cache/
+*Assets/FMODStudioCache.asset
+*Assets/StreamingAssets/*.bank
+*fmod.log
+*fmod_editor.log
+ArdGame/Assembly-CSharp-Editor-firstpass.csproj
+ArdGame/Assembly-CSharp-firstpass.csproj
+ArdGame/Assembly-CSharp.csproj
