@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArdGame", "Assembly-CSharp.csproj", "{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArdGame", "Assembly-CSharp-firstpass.csproj", "{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArdGame", "Assembly-CSharp-Editor-firstpass.csproj", "{9BEC23DD-FC1A-BF41-CD6B-FAA92705C9A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BEC23DD-FC1A-BF41-CD6B-FAA92705C9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEC23DD-FC1A-BF41-CD6B-FAA92705C9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEC23DD-FC1A-BF41-CD6B-FAA92705C9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEC23DD-FC1A-BF41-CD6B-FAA92705C9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
