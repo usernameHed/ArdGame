@@ -222,12 +222,9 @@ public class SceneManagerGlobal : SingletonMono<SceneManagerGlobal>
     }
     private IEnumerator JumpToSceneWithFadeWait(string scene, float speed)
     {
-        Debug.Log("try to load fade");
-        Debug.Log("speed: " + speed);
 
         gameObject.GetComponent<Fading>().BeginFade(1, speed);
         yield return new WaitForSeconds(speed / 2);
-        Debug.Log("done !");
         JumpToScene(scene);
     }
 

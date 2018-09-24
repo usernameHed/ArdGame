@@ -1192,6 +1192,21 @@
             Drag and drop utilities for both Unity and non-unity objects.
             </summary>
         </member>
+        <member name="P:Sirenix.Utilities.Editor.DragAndDropUtilities.OnDragStartMouseScreenPos">
+            <summary>
+            Gets the position from where the last drag started from in screen space.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.DragAndDropUtilities.MouseDragOffset">
+            <summary>
+            Gets the delta position between the currrent mouse position and where the last drag originated from.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.DragAndDropUtilities.HoveringAcceptedDropZone">
+            <summary>
+            Gets the hovering accepted drop zone ID.
+            </summary>
+        </member>
         <member name="P:Sirenix.Utilities.Editor.DragAndDropUtilities.IsDragging">
             <summary>
             Gets a value indicating whether an instance is currently being dragged.
@@ -1270,6 +1285,11 @@
         <member name="M:Sirenix.Utilities.Editor.DragAndDropUtilities.DropZone``1(UnityEngine.Rect,``0)">
             <summary>
             A drop zone area for bot Unity and non-unity objects.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.DragAndDropUtilities.DisallowedDropAreaForNextDragZone(UnityEngine.Rect)">
+            <summary>
+            Disalloweds the drop area for next drag zone. Follow this function call by a DragZone.
             </summary>
         </member>
         <member name="M:Sirenix.Utilities.Editor.DragAndDropUtilities.DragZone(UnityEngine.Rect,System.Object,System.Type,System.Boolean,System.Boolean,System.Int32)">
@@ -5779,7 +5799,7 @@
             <param name="message">The message of the message box.</param>
             <param name="detailedMessage">The detailed message of the message box.</param>
             <param name="messageType">Type of the message box.</param>
-            <param name="isFolded">If set to <c>true</c> the detailed message is hidden.</param>
+            <param name="hideDetailedMessage">If set to <c>true</c> the detailed message is hidden.</param>
             <param name="wide">If set to <c>true</c> the message box will be wide.</param>
             <returns>State of isFolded.</returns>
         </member>
@@ -5936,6 +5956,14 @@
             Draws a toolbar icon button.
             </summary>
             <param name="content">The GUI content for the button.</param>
+            <param name="selected">Whether the button state is selected or not</param>
+            <returns><c>true</c> if the button was pressed. Otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.ToolbarButton(System.String,System.Boolean)">
+            <summary>
+            Draws a toolbar icon button.
+            </summary>
+            <param name="label">The label for the button.</param>
             <param name="selected">Whether the button state is selected or not</param>
             <returns><c>true</c> if the button was pressed. Otherwise <c>false</c>.</returns>
         </member>
@@ -6720,6 +6748,11 @@
             A light border color.
             </summary>
         </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.Temporary">
+            <summary>
+            Bold label style.
+            </summary>
+        </member>
         <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.TagButton">
             <summary>
             Tag Button style.
@@ -7085,9 +7118,19 @@
             Unitys PaneOptions GUIStyle.
             </summary>
         </member>
-        <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.Temporary">
+        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.ContainerOuterShadow">
             <summary>
-            Bold label style.
+            Unitys ProjectBrowserTextureIconDropShadow GUIStyle.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.ContainerOuterShadowGlow">
+            <summary>
+            Unitys TL SelectionButton PreDropGlow GUIStyle.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.ModuleHeader">
+            <summary>
+            Unitys ShurikenModuleTitle GUIStyle.
             </summary>
         </member>
         <member name="T:Sirenix.Utilities.Editor.GUITabPage">
@@ -7509,18 +7552,7 @@
             </summary>
             <param name="source">The source string.</param>
             <param name="target">The target string.</param>
-            <param name="ignoreCase">Should the algorithm ignore letter case?.</param>
-            <param name="abbreviation">Should the algorithm attempt to search on an abbreviation of the source?.</param>
             <returns>Distance score. 0 is no match, and 1 is exact match.</returns>
-        </member>
-        <member name="M:Sirenix.Utilities.Editor.FuzzySearch.CompareCharacters(System.Char,System.Char,System.Boolean)">
-            <summary>
-            Compares the characters.
-            </summary>
-            <param name="a">a.</param>
-            <param name="b">The b.</param>
-            <param name="ignoreCase">if set to <c>true</c> [ignore case].</param>
-            <returns></returns>
         </member>
         <member name="T:Sirenix.Utilities.Editor.GUIFrameCounter">
             <summary>

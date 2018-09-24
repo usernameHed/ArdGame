@@ -332,9 +332,6 @@
     <Reference Include="UnityEditor.OSXStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="ConsoleE">
-      <HintPath>D:/Cloud/WORK/JMIN/GIT/ArdGame/ArdGame/Assets/Plugins/ConsoleE/Editor/ConsoleE.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
       <HintPath>D:/Cloud/WORK/JMIN/GIT/ArdGame/ArdGame/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
