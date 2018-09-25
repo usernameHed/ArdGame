@@ -120,6 +120,7 @@
     <Compile Include="Assets\_Scripts\Core\Utils\OnDrawGizmo.cs" />
     <Compile Include="Assets\_Scripts\Game\ArdManager.cs" />
     <Compile Include="Assets\_Scripts\Game\MenuManager.cs" />
+    <Compile Include="Assets\_Scripts\Game\NextLevel.cs" />
     <Compile Include="Assets\_Scripts\Game\PlayerController.cs" />
     <Compile Include="Assets\_Scripts\Game\SoundManager.cs" />
     <Compile Include="Assets\_Scripts\Mixed\GameData.cs" />
