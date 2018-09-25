@@ -76,6 +76,7 @@
     <Compile Include="Assets\_Scripts\Core\_Main\TimeManager.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\Trash.cs" />
     <Compile Include="Assets\_Scripts\Core\Camera\CameraController.cs" />
+    <Compile Include="Assets\_Scripts\Core\Camera\CameraMove.cs" />
     <Compile Include="Assets\_Scripts\Core\Camera\CameraSplago.cs" />
     <Compile Include="Assets\_Scripts\Core\Camera\CameraTarget.cs" />
     <Compile Include="Assets\_Scripts\Core\Camera\ClampToCamera.cs" />
