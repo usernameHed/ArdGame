@@ -28,7 +28,7 @@ public class PlayerController : SingletonMono<PlayerController>
     private void MovePlayer()
     {
         Vector3 dirPlayer = new Vector3(horiz, 0, verti);
-        UnityMovement.MoveTowards_WithPhysics(rb, dirPlayer, speedPlayer);
+        UnityMovement.MoveByForcePushing_WithPhysics(rb, dirPlayer, speedPlayer);
     }
 
     private void Update()
