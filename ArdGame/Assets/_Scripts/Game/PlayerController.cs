@@ -16,6 +16,7 @@ public class PlayerController : SingletonMono<PlayerController>
 
     private bool hasMoved = false;          //tell if player has input moved in the current frame
     private bool enabledScript = true;      //tell if this script should be active or not
+    private bool firstMove = false;
 
     private void OnEnable()
     {
@@ -31,6 +32,7 @@ public class PlayerController : SingletonMono<PlayerController>
     {
         enabledScript = true;               //active this script at start
         animator.SetBool("Dead", false);
+        firstMove = false;
     }
 
     /// <summary>
@@ -52,6 +54,11 @@ public class PlayerController : SingletonMono<PlayerController>
     {
         if (hasMoved)
         {
+            if (!firstMove)
+            {
+                firstMove = true;
+                EventManager.TriggerEvent(GameData.Event.PlayerMove);
+            }
             Vector3 dirPlayer = new Vector3(horiz, 0, verti);
             UnityMovement.MoveByForcePushing_WithPhysics(rb, dirPlayer, speedPlayer);
         }
