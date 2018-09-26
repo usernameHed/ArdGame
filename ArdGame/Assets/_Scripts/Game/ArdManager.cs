@@ -65,10 +65,14 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
                 case Door.DoorType.Move1:
                     if (fire1)
                         doorList[i].Move(true);
+                    else
+                        doorList[i].Move(false);
                     break;
                 case Door.DoorType.Move2:
                     if (fire2)
                         doorList[i].Move(true);
+                    else
+                        doorList[i].Move(false);
                     break;
             }
         }
