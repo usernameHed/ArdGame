@@ -22,7 +22,7 @@ public class SoundManager : SingletonMono<SoundManager>
 
     public void SetBallSpeed(float value)
     {
-        m_ballSource.volume = Mathf.Min(value, 0.5f);
+        m_ballSource.volume = Mathf.Min(value, 0.3f);
     }
 
     public void StopBallSound()
