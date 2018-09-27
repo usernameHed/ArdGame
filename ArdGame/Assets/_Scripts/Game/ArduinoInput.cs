@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-public class ArduinoInput : SingletonMono<ArduinoInput>
+public class ArduinoInput : MonoBehaviour
 {
 	private AndroidJavaObject plugin;
+    private float fuckYouVeryMuch = 0.0F;
+
+    private bool enableScript = false;
 
 	void Start()
 	{
@@ -20,17 +23,28 @@ public class ArduinoInput : SingletonMono<ArduinoInput>
         plugin.CallStatic("Init", new object[1] { activity });
     }
 
+    public void EnableScript()
+    {
+        enableScript = true;
+    }
+
 	void Update ()
 	{
-		try
+        if (!enableScript)
+            return;
+
+
+        try
 		{
-			plugin.Call("onFrameUpdate");
-            ArdManager.Instance.InputLevel(plugin.Call<string>("getValue"));
+            plugin.Call("onFrameUpdate");
+            string codeArduino = plugin.Call<string>("getValue");
+
+            ArdManager.Instance.InputLevel(codeArduino);
 			//text.text = "Value: " + plugin.Call<string>("getValue");
 		}
 		catch(System.Exception e)
 		{
-
+            //Debug.LogError(e);
 		}
 	}
 }

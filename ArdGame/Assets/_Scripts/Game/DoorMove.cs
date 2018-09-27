@@ -17,6 +17,12 @@ public class DoorMove : Door
 
     private bool isOpenning = false;
 
+    private void Start()
+    {
+        listener = SoundManager.Instance.GetComponent<AudioSource>();
+        ArdManager.Instance.AddDoor(this);
+    }
+
     /// <summary>
     /// open or close (set trigger of animation)
     /// </summary>

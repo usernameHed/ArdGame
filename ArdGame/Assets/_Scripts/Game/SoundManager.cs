@@ -12,7 +12,7 @@ public class SoundManager : SingletonMono<SoundManager>
 
     private void Awake()
     {
-        Camera.main.GetComponent<AudioListener>().enabled = false;
+        //Camera.main.GetComponent<AudioListener>().enabled = false;
     }
 
     public void PlayGingle()

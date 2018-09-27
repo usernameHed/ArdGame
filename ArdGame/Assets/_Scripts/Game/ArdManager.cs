@@ -6,6 +6,8 @@ using System.Collections.Generic;
 [TypeInfoBox("[ILevelLocal] Manage Setup Scene behaviour")]
 public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
 {
+    public TextMeshProUGUI debugArd;
+
     [FoldoutGroup("input")]
     public bool enableKeyboard = true;
     [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
@@ -42,6 +44,7 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
 
     public void AddDoor(Door door)
     {
+        Debug.Log("ici on ajoute une porte " + door.doorType);
         doorList.Add(door);
     }
 
@@ -86,6 +89,13 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
         }
     }
 
+    [Button]
+    private void AdruionoMove(int x, int y, int r, bool button1, bool button2)
+    {
+        MoveBall(x, y);
+        MoveDoor(r, button1, button2);
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -122,8 +132,12 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
     /// called each frame
     /// </summary>
     /// <param name="arduinoCode"></param>
+    [Button]
     public void InputLevel(string arduinoCode)
     {
+        if (debugArd)  
+           debugArd.text = arduinoCode;
+
         string xCode = "";  //fill X data (0000 - 1024)
         string yCode = "";  //fill Y data (0000 - 1024)
         string rotationDoorCode = "";  //fill rotation (0000 - 1024) 

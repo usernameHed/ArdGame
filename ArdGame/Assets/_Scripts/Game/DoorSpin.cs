@@ -16,6 +16,11 @@ public class DoorSpin : Door
         desiredRot = doorToSpin.eulerAngles.y;
     }
 
+    private void Start()
+    {
+        ArdManager.Instance.AddDoor(this);
+    }
+
     public override void Move(float input)
     {
         Debug.Log("move doorSpin");

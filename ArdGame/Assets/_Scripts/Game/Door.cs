@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        ArdManager.Instance.AddDoor(this);
+        
     }
 
     public virtual void Move(float input)
