@@ -82,6 +82,7 @@ public class PlayerController : SingletonMono<PlayerController>
         if (!enabledScript)
             return;
 
+        SoundManager.Instance.SetBallSpeed((rb.velocity.magnitude - 2) / 10);
         InputPlayer();
     }
 
