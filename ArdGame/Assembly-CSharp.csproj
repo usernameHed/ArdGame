@@ -150,6 +150,7 @@
     <None Include="Assets\_Render\Shaders\Sprites-Diffuse-Flash2.shader" />
     <None Include="Assets\_Render\Shaders\Specular.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\Multiply.shader" />
+    <None Include="Assets\_Render\Shaders\WallUnlit.shader" />
     <None Include="Assets\_Render\Shaders\Sprites-Diffuse-Flash.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\ColorDodge.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\Darken.shader" />
