@@ -30,16 +30,20 @@ public class DoorMove : Door
     {
         if (input && isOpen == false && isOpenning == false && isClosed)
         {
-            listener.clip = m_open;
-            listener.Play();
+            //listener.clip = m_open;
+            //listener.loop = false;
+            //listener.Play();
+            
             Debug.Log("move DoorMove " + doorType);
             animator.SetTrigger("Open");
             isOpenning = true;
         }
         else if (!input && isOpen && !isPlayerInside)
         {
-            listener.clip = m_close;
-            listener.Play();
+            //listener.clip = m_close;
+            //listener.loop = false;
+            //listener.Play();
+            
             animator.SetTrigger("Close");
             isOpen = false;
             isOpenning = false;
