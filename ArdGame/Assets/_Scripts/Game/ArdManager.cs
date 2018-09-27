@@ -6,6 +6,15 @@ using System.Collections.Generic;
 [TypeInfoBox("[ILevelLocal] Manage Setup Scene behaviour")]
 public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
 {
+    [FoldoutGroup("input")]
+    public bool enableKeyboard = true;
+    [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
+    private float margeX = 0.05f;
+    [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
+    private float margeY = 0.05f;
+    [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
+    private float margeRotateDoor = 0.05f;
+
     [SerializeField]
     private float timeAfterWinningForCamera = 1.5f;
     [SerializeField]
@@ -48,12 +57,11 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
         animLevel.Play("Out");
     }
 
-    private void InputDoor()
+    /// <summary>
+    /// called by arduino OR keyboard
+    /// </summary>
+    private void InputDoor(float spinDoor, bool fire1, bool fire2)
     {
-        float spinDoor = Input.GetAxis("Spin");
-        bool fire1 = Input.GetButton("Fire1");
-        bool fire2 = Input.GetButton("Fire2");
-
         for (int i = 0; i < doorList.Count; i++)
         {
             switch(doorList[i].doorType)
@@ -76,27 +84,106 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
                     break;
             }
         }
-
-        
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    [Button]
+    private void MoveBall(int x, int y)
+    {
+        //get value from 0 to 2, then -1: get value from -1 to 1;
+        float xMove = (x * 2.0f / 1024.0f) - 1;
+        float yMove = (y * 2.0f / 1024.0f) - 1;
+
+        if (Mathf.Abs(xMove) < margeX)
+            xMove = 0;
+        if (Mathf.Abs(yMove) < margeY)
+            yMove = 0;
+        
+        Debug.Log("Value Move: " + xMove + " " + yMove);
+        PlayerController.Instance.InputPlayerArduino(xMove, yMove);
+    }
+
+    [Button]
+    private void MoveDoor(int r, bool button1, bool button2)
+    {
+        float rotate = (r * 2.0f / 1024.0f) - 1;
+        if (Mathf.Abs(rotate) < margeRotateDoor)
+            rotate = 0;
+
+        Debug.Log("Value Door: " + rotate + " " + button1 + " " + button2);
+        InputDoor(rotate, button1, button2);
+    }
+
+    /// <summary>
+    /// called each frame
+    /// </summary>
+    /// <param name="arduinoCode"></param>
+    public void InputLevel(string arduinoCode)
+    {
+        string xCode = "";  //fill X data (0000 - 1024)
+        string yCode = "";  //fill Y data (0000 - 1024)
+        string rotationDoorCode = "";  //fill rotation (0000 - 1024) 
+        for (int i = 0; i < 4; i++)
+        {
+            xCode += arduinoCode[i];
+        }
+        for (int i = 4; i < 8; i++)
+        {
+            yCode += arduinoCode[i];
+        }
+        for (int i = 8; i < 12; i++)
+        {
+            rotationDoorCode += arduinoCode[i];
+        }
+        bool button1 = arduinoCode[12] == '1';
+        bool button2 = arduinoCode[13] == '1';
+
+        MoveBall(xCode.ToInt(0), yCode.ToInt(0));               //move ball
+        MoveDoor(rotationDoorCode.ToInt(0), button1, button2);  //move door
+    }
+
+    /// <summary>
+    /// handle input of level with keyboard
+    /// </summary>
     private void InputLevel()
     {
         //go to first level !
-        InputDoor();
+        if (enableKeyboard)
+            InputDoor(Input.GetAxis("Spin"), Input.GetButton("Fire1"), Input.GetButton("Fire2"));
 
 
         //go to first level !
         if (Input.GetButton("Restart"))
         {
-            GameManager.Instance.SceneManagerLocal.PlayPrevious();
+            RestartGame();
         }
         //quit application !
         if (Input.GetButton("Cancel"))
         {
-            GameManager.Instance.SceneManagerLocal.Quit();
+            QuitGame();
         }
     }
+
+    /// <summary>
+    /// called by game, or 
+    /// </summary>
+    public void RestartGame()
+    {
+        GameManager.Instance.SceneManagerLocal.PlayPrevious();
+    }
+
+    /// <summary>
+    /// called by game, or 
+    /// </summary>
+    public void QuitGame()
+    {
+        GameManager.Instance.SceneManagerLocal.Quit();
+    }
+
 
     /// <summary>
     /// called when winning, after X seconde, go to next level !

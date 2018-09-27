@@ -48,6 +48,19 @@ public class PlayerController : SingletonMono<PlayerController>
     }
 
     /// <summary>
+    /// get called when Arduino send data
+    /// </summary>
+    /// <param name="x">from -1 to 1</param>
+    /// <param name="y">from -1 to 1</param>
+    public void InputPlayerArduino(float x, float y)
+    {
+        horiz = x;
+        verti = y;
+
+        hasMoved = (horiz != 0 || verti != 0);
+    }
+
+    /// <summary>
     /// move in physics, according to input of player
     /// </summary>
     private void MovePlayer()
@@ -83,7 +96,8 @@ public class PlayerController : SingletonMono<PlayerController>
             return;
 
         SoundManager.Instance.SetBallSpeed((rb.velocity.magnitude - 2) / 10);
-        InputPlayer();
+        if (ArdManager.Instance.enableKeyboard)
+            InputPlayer();
     }
 
     /// <summary>
