@@ -47,7 +47,7 @@
 
 				o.pos = float2(o.uv.x, o.uv.y);
 
-				v.vertex = mul(UNITY_MATRIX_M, v.vertex);
+				v.vertex = mul(UNITY_MATRIX_MV, v.vertex);
 				o.uv = float2(v.vertex.x, v.vertex.y);
 
 				return o;

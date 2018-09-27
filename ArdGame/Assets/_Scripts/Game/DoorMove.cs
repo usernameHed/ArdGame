@@ -6,6 +6,10 @@ public class DoorMove : Door
 {
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    AudioSource listener;
+    [SerializeField]
+    AudioClip m_open, m_close;
 
     public bool isOpen = false;
     public bool isPlayerInside = false;
@@ -20,12 +24,16 @@ public class DoorMove : Door
     {
         if (input && isOpen == false && isOpenning == false && isClosed)
         {
+            listener.clip = m_open;
+            listener.Play();
             Debug.Log("move DoorMove " + doorType);
             animator.SetTrigger("Open");
             isOpenning = true;
         }
         else if (!input && isOpen && !isPlayerInside)
         {
+            listener.clip = m_close;
+            listener.Play();
             animator.SetTrigger("Close");
             isOpen = false;
             isOpenning = false;
