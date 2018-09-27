@@ -24,6 +24,8 @@ public class NextLevel : MonoBehaviour
     /// </summary>
     private void GameOver()
     {
+        SoundManager.Instance.PlayGingle();
+        SoundManager.Instance.StopBallSound();
         enabledScript = false;
         collidersWall.SetActive(true);              //active the wall (for blocking player)
     }

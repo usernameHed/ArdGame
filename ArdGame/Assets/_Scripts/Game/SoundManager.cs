@@ -25,6 +25,20 @@ public class SoundManager : SingletonMono<SoundManager>
         m_ballSource.volume = Mathf.Min(value, 0.5f);
     }
 
+    public void StopBallSound()
+    {
+        StartCoroutine(FadeBallSound());
+    }
+
+    IEnumerator FadeBallSound()
+    {
+        while(m_ballSource.volume > 0)
+        {
+            m_ballSource.volume -= 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+
     [ContextMenu("test")]
     public void PlayRandomCollision()
     {
