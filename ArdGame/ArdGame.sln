@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArdGame", "Assembly-CSharp.csproj", "{23C62558-9CC2-86E0-D0E2-F8A74BAD9DAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArdGame", "Assembly-CSharp-firstpass.csproj", "{3CEA10F2-EC14-74B1-A818-3DE3B47E4EA1}"
