@@ -121,6 +121,7 @@
     <Compile Include="Assets\_Scripts\Core\Utils\ObjectSight.cs" />
     <Compile Include="Assets\_Scripts\Core\Utils\OnDrawGizmo.cs" />
     <Compile Include="Assets\_Scripts\Game\ArdManager.cs" />
+    <Compile Include="Assets\_Scripts\Game\ArduinoInput.cs" />
     <Compile Include="Assets\_Scripts\Game\Door.cs" />
     <Compile Include="Assets\_Scripts\Game\DoorLinkAnimator.cs" />
     <Compile Include="Assets\_Scripts\Game\DoorMove.cs" />
