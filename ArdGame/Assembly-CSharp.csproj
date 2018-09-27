@@ -63,6 +63,7 @@
     <Compile Include="Assets\_Render\Shaders\RippleEffect.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\CircularLinkedList.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\ClampVelocity.cs" />
+    <Compile Include="Assets\_Scripts\Core\_Main\CollisionSoundTrigger.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\EventManager.cs" />
     <Compile Include="Assets\_Scripts\Core\_Main\Fading.cs" />
@@ -155,6 +156,7 @@
     <None Include="Assets\_Render\Shaders\Color.shader" />
     <None Include="Assets\_Render\Shaders\BilateralBlur.shader" />
     <None Include="Assets\_Render\Shaders\distortion.shader" />
+    <None Include="Assets\WallUnlit.shader" />
     <None Include="Assets\_Render\Shaders\Fresnel.shader" />
     <None Include="Assets\_Render\Shaders\Shockwave.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\Exclusion.shader" />
