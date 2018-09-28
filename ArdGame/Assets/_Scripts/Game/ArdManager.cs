@@ -108,6 +108,8 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
         float xMove = (x * 2.0f / 1024.0f) - 1;
         float yMove = (y * 2.0f / 1024.0f) - 1;
 
+        xMove = -xMove;
+
         if (Mathf.Abs(xMove) < margeX)
             xMove = 0;
         if (Mathf.Abs(yMove) < margeY)
