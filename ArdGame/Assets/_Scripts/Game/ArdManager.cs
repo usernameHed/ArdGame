@@ -14,8 +14,8 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
     private float margeX = 0.05f;
     [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
     private float margeY = 0.05f;
-    [SerializeField, FoldoutGroup("input"), Range(0.0f, 1.0f)]
-    private float margeRotateDoor = 0.05f;
+
+    private float margeRotateDoorr = 0.2f;
 
     [SerializeField]
     private float timeAfterWinningForCamera = 1.5f;
@@ -121,7 +121,7 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
     private void MoveDoor(int r, bool button1, bool button2)
     {
         float rotate = (r * 2.0f / 1024.0f) - 1;
-        if (Mathf.Abs(rotate) < margeRotateDoor)
+        if (Mathf.Abs(rotate) < margeRotateDoorr)
             rotate = 0;
 
         Debug.Log("Value Door: " + rotate + " " + button1 + " " + button2);
@@ -157,7 +157,7 @@ public class ArdManager : SingletonMono<ArdManager>, ILevelLocal
         bool button2 = arduinoCode[13] == '1';
 
         MoveBall(xCode.ToInt(0), yCode.ToInt(0));               //move ball
-        MoveDoor(rotationDoorCode.ToInt(0), button1, button2);  //move door
+        MoveDoor(rotationDoorCode.ToInt(0), button2, button1);  //move door
     }
 
     /// <summary>
