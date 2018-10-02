@@ -341,6 +341,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000721671815602, guid: 58ba5f57b7230f1408b90f1cd0b21753,
         type: 2}
+      propertyPath: debugArd
+      value: 
+      objectReference: {fileID: 95927745}
+    - target: {fileID: 114000721671815602, guid: 58ba5f57b7230f1408b90f1cd0b21753,
+        type: 2}
       propertyPath: text
       value: 
       objectReference: {fileID: 249908840}
@@ -354,16 +359,6 @@ Prefab:
       propertyPath: animLevel
       value: 
       objectReference: {fileID: 249908838}
-    - target: {fileID: 114000721671815602, guid: 58ba5f57b7230f1408b90f1cd0b21753,
-        type: 2}
-      propertyPath: debugArd
-      value: 
-      objectReference: {fileID: 95927745}
-    - target: {fileID: 114000721671815602, guid: 58ba5f57b7230f1408b90f1cd0b21753,
-        type: 2}
-      propertyPath: enableKeyboard
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ba5f57b7230f1408b90f1cd0b21753, type: 2}
   m_IsPrefabAsset: 0

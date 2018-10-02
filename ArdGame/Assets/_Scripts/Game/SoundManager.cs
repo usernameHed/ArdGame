@@ -10,6 +10,8 @@ public class SoundManager : SingletonMono<SoundManager>
     [SerializeField] AudioSource m_collisionSource;
     [SerializeField] AudioSource m_ballSource;
 
+    public AudioSource m_doorSource;
+
     private void Awake()
     {
         //Camera.main.GetComponent<AudioListener>().enabled = false;

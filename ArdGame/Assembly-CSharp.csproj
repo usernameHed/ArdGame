@@ -155,10 +155,10 @@
     <None Include="Assets\_Render\Shaders\Sprites-Diffuse-Flash.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\ColorDodge.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\Darken.shader" />
+    <None Include="Assets\_Render\Shaders\ScreenSpaceTexture.shader" />
     <None Include="Assets\_Render\Shaders\Color.shader" />
     <None Include="Assets\_Render\Shaders\BilateralBlur.shader" />
     <None Include="Assets\_Render\Shaders\distortion.shader" />
-    <None Include="Assets\WallUnlit.shader" />
     <None Include="Assets\_Render\Shaders\Fresnel.shader" />
     <None Include="Assets\_Render\Shaders\Shockwave.shader" />
     <None Include="Assets\_Render\Shaders\BlendMods\Exclusion.shader" />

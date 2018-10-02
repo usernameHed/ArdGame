@@ -291,8 +291,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494417358182428}
-  m_LocalRotation: {x: -0, y: 0.708348, z: -0, w: 0.7058634}
-  m_LocalPosition: {x: 5.87, y: 1.61, z: -0.47}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 1.62, z: -0.45}
   m_LocalScale: {x: 1.3000002, y: 2.4335, z: 1.4205071}
   m_Children:
   - {fileID: 4067551132156318}
@@ -463,7 +463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 2
   animator: {fileID: 95800375689736864}
-  listener: {fileID: 0}
   m_open: {fileID: 8300000, guid: 5de769417a01b104ca8e08421d01dfe7, type: 3}
   m_close: {fileID: 8300000, guid: 04d983793f08cfb4d95cc16622fa5bb9, type: 3}
   isOpen: 0

@@ -7,8 +7,6 @@ public class DoorMove : Door
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    AudioSource listener;
-    [SerializeField]
     AudioClip m_open, m_close;
 
     public bool isOpen = false;
@@ -19,7 +17,6 @@ public class DoorMove : Door
 
     private void Start()
     {
-        listener = SoundManager.Instance.GetComponent<AudioSource>();
         ArdManager.Instance.AddDoor(this);
     }
 
@@ -30,9 +27,8 @@ public class DoorMove : Door
     {
         if (input && isOpen == false && isOpenning == false && isClosed)
         {
-            //listener.clip = m_open;
-            //listener.loop = false;
-            //listener.Play();
+            SoundManager.Instance.m_doorSource.clip = m_open;
+            SoundManager.Instance.m_doorSource.Play();
             
             Debug.Log("move DoorMove " + doorType);
             animator.SetTrigger("Open");
@@ -40,9 +36,8 @@ public class DoorMove : Door
         }
         else if (!input && isOpen && !isPlayerInside)
         {
-            //listener.clip = m_close;
-            //listener.loop = false;
-            //listener.Play();
+            SoundManager.Instance.m_doorSource.clip = m_close;
+            SoundManager.Instance.m_doorSource.Play();
             
             animator.SetTrigger("Close");
             isOpen = false;
